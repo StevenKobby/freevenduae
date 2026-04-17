@@ -164,7 +164,8 @@ const modal = document.getElementById('contactModal');
 function openModal() {
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
-  modal.querySelector('input, select, textarea').focus();
+  const firstFocusable = modal.querySelector('input, select, textarea');
+  if (firstFocusable) firstFocusable.focus();
 }
 
 function closeModal() {
